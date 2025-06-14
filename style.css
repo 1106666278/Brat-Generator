@@ -1,0 +1,372 @@
+:root {
+    --brat-green: #7CFC00;
+    --primary-text: #333;
+    --secondary-text: #555;
+    --bg-color: #ffffff;
+    --alt-bg-color: #f0f2f5;
+    --border-color: #ddd;
+    --button-bg: #007bff;
+    --button-text: #ffffff;
+    --button-hover-bg: #0056b3;
+    --active-border-color: #007bff;
+    --font-primary: 'Inter', 'Noto Sans', sans-serif; /* Noto Sans untuk cakupan karakter yang lebih luas */
+}
+
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background-color: var(--bg-color);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--brat-green);
+    margin: 0;
+}
+
+nav a {
+    color: var(--primary-text);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--brat-green);
+}
+
+.lang-switcher button, .footer-lang-switcher button {
+    background: none;
+    border: 1px solid transparent;
+    padding: 8px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.lang-switcher button.active, .footer-lang-switcher button.active {
+    background-color: var(--brat-green);
+    color: var(--primary-text);
+    border-color: var(--brat-green);
+}
+.lang-switcher button:not(.active):hover,
+.footer-lang-switcher button:not(.active):hover {
+    background-color: var(--alt-bg-color);
+}
+
+
+/* Generator Section */
+.generator-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.generator-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--primary-text);
+}
+
+.instruction {
+    font-size: 1.1em;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+.small-instruction {
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+#inputText {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1.1em;
+    text-align: center;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#inputText:focus {
+    border-color: var(--brat-green);
+    outline: none;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.mode-selector {
+    display: flex;
+    gap: 10px; /* Reduced gap for more buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center;
+}
+
+.mode-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; /* Adjusted padding */
+    font-size: 1em;
+    cursor: pointer;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.mode-button .color-indicator, .mode-button .icon-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.mode-button .color-indicator {
+    border: 1px solid var(--border-color);
+}
+.mode-button .color-indicator.green { background-color: var(--brat-green); }
+.mode-button .color-indicator.white { background-color: #fff; }
+.mode-button .icon-indicator.scribble-icon {
+    font-size: 1.2em; /* Make icon slightly larger */
+    line-height: 1;
+    border-radius: 0; /* Remove border-radius if it's a text icon */
+}
+
+
+.mode-button.active {
+    border-color: var(--brat-green);
+    box-shadow: 0 0 0 2px var(--brat-green);
+}
+.mode-button:not(.active):hover {
+    border-color: #aaa;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: 700;
+    background-color: var(--brat-green);
+    color: var(--primary-text);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.cta-button:hover {
+    background-color: #6ADF00;
+}
+.cta-button:active {
+    transform: scale(0.98);
+}
+
+#bratCanvasContainer {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+    border: 2px solid var(--border-color);
+    margin: 0 auto;
+    display: flex; /* For centering canvas if its CSS size is smaller than container */
+    align-items: center;
+    justify-content: center;
+    /* Background color will be set on the canvas itself by JS */
+}
+
+#bratCanvasElement {
+    display: block; /* Important for canvas */
+    max-width: 100%;
+    max-height: 100%;
+    /* width and height attributes are set in HTML/JS for drawing resolution */
+}
+
+
+/* Info Sections */
+.info-section {
+    padding: 50px 0;
+    text-align: center;
+}
+.info-section.alt-bg {
+    background-color: var(--alt-bg-color);
+}
+
+.info-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+.info-section .subtitle {
+    font-size: 1.1em;
+    color: var(--secondary-text);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.steps-grid, .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.step, .feature-item {
+    background-color: var(--bg-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-color);
+}
+.alt-bg .feature-item {
+     background-color: var(--bg-color);
+}
+
+
+.step-number {
+    background-color: var(--brat-green);
+    color: var(--primary-text);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.step h3, .feature-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--primary-text);
+}
+.feature-item img {
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.footer-lang-switcher span {
+    margin-right: 5px;
+}
+.footer-lang-switcher button {
+    color: #ccc;
+    padding: 5px 8px;
+}
+.footer-lang-switcher button.active {
+    color: var(--brat-green);
+    background: none;
+    border-color: transparent;
+    text-decoration: underline;
+}
+.footer-lang-switcher button:not(.active):hover {
+    color: #fff;
+    background: none;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    nav a {
+        margin: 0 10px;
+    }
+    .lang-switcher {
+        margin-top: 10px;
+    }
+
+    .generator-section h2 {
+        font-size: 2em;
+    }
+    .info-section h2 {
+        font-size: 1.8em;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+    .mode-selector {
+        width: 100%;
+        justify-content: center;
+    }
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    footer .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;
+    }
+    nav a {
+        font-size: 0.9em;
+    }
+    .mode-button {
+        padding: 8px 12px; /* Smaller buttons on small screens */
+        font-size: 0.9em;
+    }
+}

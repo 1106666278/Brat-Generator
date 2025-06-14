@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle" data-translate-key="metaTitle">Generator Sampul Brat</title>
+    <meta id="pageDescription" name="description" content="Buat gambar sampul kustom ala album Brat Charli XCX dengan teks Anda sendiri. Pilih latar belakang hijau atau putih." data-translate-key="metaDescription">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <h1 class="logo" data-translate-key="logo">Brat-Generator</h1>
+            <nav>
+                <a href="#generator" data-translate-key="navGenerator">Generator</a>
+                <a href="#how-it-works" data-translate-key="navHowItWorks">Cara Kerja</a>
+                <a href="#features" data-translate-key="navFeatures">Fitur</a>
+            </nav>
+            <div class="lang-switcher">
+                <button id="lang-id" class="active">🇮🇩 Bahasa Indonesia</button>
+                <button id="lang-en">🇺🇸 English</button>
+                <button id="lang-zh">🇨🇳 中文</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="generator" class="generator-section">
+            <div class="container">
+                <h2 data-translate-key="generatorTitle">Generator Sampul Brat - Charli XCX</h2>
+                <p class="instruction" data-translate-key="typeWordsHere">Masukkan teks Anda di sini ↓</p>
+                <input type="text" id="inputText" placeholder="Ketik apa saja yang Anda suka" data-translate-key="inputPlaceholder" />
+
+                <div class="controls">
+                    <div class="mode-selector">
+                        <button id="greenMode" class="mode-button active">
+                            <span class="color-indicator green"></span>
+                            <span data-translate-key="greenMode">Mode Hijau</span>
+                        </button>
+                        <button id="whiteMode" class="mode-button">
+                            <span class="color-indicator white"></span>
+                            <span data-translate-key="whiteMode">Mode Putih</span>
+                        </button>
+                        <button id="scribbleMode" class="mode-button">
+                            <span class="icon-indicator scribble-icon">〰️</span>
+                            <span data-translate-key="scribbleMode">Mode Coretan</span>
+                        </button>
+                    </div>
+                    <button id="generateButton" class="cta-button">
+                        <span data-translate-key="generateButton">Buat Sampul Brat Anda</span>
+                    </button>
+                </div>
+
+                <p class="instruction" data-translate-key="scrollDown">Gulir ke bawah untuk melihat sampul Brat Anda ↓</p>
+                <div id="bratCanvasContainer">
+                    <canvas id="bratCanvasElement" width="500" height="500"></canvas>
+                </div>
+                <p class="instruction small-instruction" data-translate-key="takeScreenshot">Screenshot untuk menyimpan ↑</p>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="info-section">
+            <div class="container">
+                <h2 data-translate-key="howItWorksTitle">Cara Kerja Generator Brat</h2>
+                <p class="subtitle" data-translate-key="howItWorksSubtitle">Buat gambar gaya sampul album yang unik dengan kesederhanaan dan gaya Generator Brat.</p>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3 data-translate-key="step1Title">Pilih Latar</h3>
+                        <p data-translate-key="step1Desc">Mulai dengan memilih latar hijau ikonik atau putih mewah untuk sampul album pribadi Anda.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3 data-translate-key="step2Title">Masukkan Teks</h3>
+                        <p data-translate-key="step2Desc">Masukkan teks yang ingin Anda tampilkan di tengah gambar. Buatlah semenarik mungkin.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3 data-translate-key="step3Title">Buat Sampul</h3>
+                        <p data-translate-key="step3Desc">Dengan sekali klik, Generator Brat mengubah teks Anda menjadi sampul album yang stylish. Pratinjau dan screenshot untuk menyimpan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="info-section alt-bg">
+            <div class="container">
+                <h2 data-translate-key="featuresTitle">Fitur Generator Brat</h2>
+                <p class="subtitle" data-translate-key="featuresSubtitle">Jelajahi fitur unik Generator Brat kami.</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <img src="https://assets.website-files.com/6357722e2a5f19121d37f84d/6358bd6f8819ea49d9990848_Frame%2047885-7.svg" alt="Ikon Kustomisasi" data-translate-key="featureCustomizationAlt">
+                        <h3 data-translate-key="featureCustomizationTitle">Kustomisasi</h3>
+                        <p data-translate-key="featureCustomizationDesc">Pilih antara latar hijau tebal atau putih bersih dan masukkan teks kustom Anda.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="https://assets.website-files.com/6357722e2a5f19121d37f84d/6358bc975b21e904613ae60d_Frame%2047885-2.svg" alt="Ikon Kemudahan Penggunaan" data-translate-key="featureEaseOfUseAlt">
+                        <h3 data-translate-key="featureEaseOfUseTitle">Mudah Digunakan</h3>
+                        <p data-translate-key="featureEaseOfUseDesc">Antarmuka kami intuitif dan mudah digunakan, mulailah membuat segera.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="https://assets.website-files.com/6357722e2a5f19121d37f84d/6358bc8843648dc8b08bbea1_Frame%2047885-5.svg" alt="Ikon Kualitas" data-translate-key="featureQualityAlt">
+                        <h3 data-translate-key="featureQualityTitle">Kualitas Tinggi</h3>
+                        <p data-translate-key="featureQualityDesc">Nikmati output gambar berkualitas tinggi, memastikan teks Anda jelas dan hidup.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> BratGen. <span data-translate-key="footerRights">Hak cipta dilindungi.</span></p>
+            <div class="footer-lang-switcher">
+                <span data-translate-key="languageLabel">Bahasa:</span>
+                <button id="footer-lang-id">Bahasa Indonesia</button> |
+                <button id="footer-lang-en">English</button> |
+                <button id="footer-lang-zh">中文</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
