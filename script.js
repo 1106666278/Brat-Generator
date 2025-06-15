@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             metaTitle: "Brat Cover Generator - Create Custom Album Art",
             metaDescription: "Generate custom Brat album cover style images by Charli XCX with your own text. Choose green, white, or scribble style backgrounds. Fast and easy!",
-            logo: "BratGen",
+            logo: "Brat-Generator",
             navGenerator: "Generator",
             navHowItWorks: "How it Works",
             navFeatures: "Features",
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         zh: {
             metaTitle: "Brat 封面生成器 - 创建自定义专辑封面",
             metaDescription: "使用您自己的文本生成 Charli XCX 风格的 Brat 专辑封面图像。选择绿色、白色或涂鸦背景。快速简单！",
-            logo: "BratGen",
+            logo: "Brat-Generator",
             navGenerator: "生成器",
             navHowItWorks: "工作原理",
             navFeatures: "特点",
